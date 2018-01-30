@@ -182,13 +182,14 @@
     <Compile Include="Migrations\201801301302413_SetNamesOfMembershipType.Designer.cs">
       <DependentUpon>201801301302413_SetNamesOfMembershipType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801301313150_AddBirthdateCustomers.cs" />
-    <Compile Include="Migrations\201801301313150_AddBirthdateCustomers.Designer.cs">
-      <DependentUpon>201801301313150_AddBirthdateCustomers.cs</DependentUpon>
+    <Compile Include="Migrations\201801310830075_Add-Movie.cs" />
+    <Compile Include="Migrations\201801310830075_Add-Movie.Designer.cs">
+      <DependentUpon>201801310830075_Add-Movie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerContext.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -278,8 +279,8 @@
     <EmbeddedResource Include="Migrations\201801301302413_SetNamesOfMembershipType.resx">
       <DependentUpon>201801301302413_SetNamesOfMembershipType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801301313150_AddBirthdateCustomers.resx">
-      <DependentUpon>201801301313150_AddBirthdateCustomers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801310830075_Add-Movie.resx">
+      <DependentUpon>201801310830075_Add-Movie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

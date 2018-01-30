@@ -2,11 +2,15 @@
 using System.Web.Mvc;
 using VidlyMy.Models;
 using VidlyMy.ViewModels;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+
+        private CustomerContext _context;
+
         public ViewResult Index()
         {
             var movies = GetMovies();

@@ -11,6 +11,7 @@ namespace VidlyMy.Models
 
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        //public DbSet<Genre> Genres { get; set; }
 
     }
 }
