@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using asp_les_1.Models;
-using asp_les_1.ViewModels;
+using VidlyMy.Models;
+using VidlyMy.ViewModels;
 
-namespace asp_les_1.Controllers
+namespace VidlyMy.Controllers
 
 {
     public class MoviesController : Controller

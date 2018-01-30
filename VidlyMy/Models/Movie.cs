@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace asp_les_1.Models
+namespace VidlyMy.Models
 {
     public class Movie
     {

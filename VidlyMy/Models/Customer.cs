@@ -5,7 +5,7 @@ using System.Web;
 using VidlyMy.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace asp_les_1.Models
+namespace VidlyMy.Models
 {
     public class Customer
     {
