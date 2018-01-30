@@ -148,8 +148,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MovieController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,6 +173,18 @@
     <Compile Include="Migrations\201801301103213_ApplyAnnotationToCustomerName.cs" />
     <Compile Include="Migrations\201801301103213_ApplyAnnotationToCustomerName.Designer.cs">
       <DependentUpon>201801301103213_ApplyAnnotationToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801301258279_AddMemberShipTypeName.cs" />
+    <Compile Include="Migrations\201801301258279_AddMemberShipTypeName.Designer.cs">
+      <DependentUpon>201801301258279_AddMemberShipTypeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801301302413_SetNamesOfMembershipType.cs" />
+    <Compile Include="Migrations\201801301302413_SetNamesOfMembershipType.Designer.cs">
+      <DependentUpon>201801301302413_SetNamesOfMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801301313150_AddBirthdateCustomers.cs" />
+    <Compile Include="Migrations\201801301313150_AddBirthdateCustomers.Designer.cs">
+      <DependentUpon>201801301313150_AddBirthdateCustomers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -222,10 +235,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Details.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Customers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -255,6 +271,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801301103213_ApplyAnnotationToCustomerName.resx">
       <DependentUpon>201801301103213_ApplyAnnotationToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801301258279_AddMemberShipTypeName.resx">
+      <DependentUpon>201801301258279_AddMemberShipTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801301302413_SetNamesOfMembershipType.resx">
+      <DependentUpon>201801301302413_SetNamesOfMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801301313150_AddBirthdateCustomers.resx">
+      <DependentUpon>201801301313150_AddBirthdateCustomers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
