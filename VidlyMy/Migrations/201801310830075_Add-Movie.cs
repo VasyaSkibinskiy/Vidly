@@ -7,7 +7,7 @@ namespace VidlyMy.Migrations
     {
         public override void Up()
         {
-            CreateTable(
+            /*CreateTable(
                 "dbo.Movies",
                 c => new
                 {
@@ -29,15 +29,15 @@ namespace VidlyMy.Migrations
                     Id = c.Byte(nullable: false),
                     Name = c.String(nullable: false, maxLength: 255),
                 })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id);*/
         }
         
         public override void Down()
-        {
+        {/*
             DropForeignKey("dbo.Movies", "GenreId", "dbo.Genres");
             DropIndex("dbo.Movies", new[] { "GenreId" });
             DropTable("dbo.Genres");
-            DropTable("dbo.Movies");
+            DropTable("dbo.Movies");*/
         }
-    }
+        }
 }
