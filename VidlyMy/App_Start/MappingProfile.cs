@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using VidlyMy.Dto;
+using VidlyMy.Dtos;
 using VidlyMy.Models;
 
 
@@ -12,7 +13,19 @@ namespace VidlyMy.App_Start
 {
     public class MappingProfile : Profile
     {
-        Mapper.CreateMap<Customer, CustomerDto>();
-        Mapper.CreateMap<CustomerDto, Customer>();
-    }
+        public MappingProfile()
+        {
+            Mapper.CreateMap<Customer, CustomerDto>();
+            Mapper.CreateMap<Movie, MovieDto>();
+
+
+            // Dto to Domain
+            Mapper.CreateMap<CustomerDto, Customer>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
+
+            Mapper.CreateMap<MovieDto, Movie>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
+        }
+
+}
 }
