@@ -5,7 +5,7 @@ using VidlyMy.Models;
 using System.Data.Entity;
 using VidlyMy.ViewModels;
 
-namespace Vidly.Controllers
+namespace VidlyMy.Controllers
 {
     public class CustomersController : Controller
     {
@@ -31,8 +31,20 @@ namespace Vidly.Controllers
             return View(viewModel);
         } 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+                return View("CustomerForm",viewModel);
+            }
+
+
             if (customer.Id == 0)
                 _context.Customers.Add(customer);
             else

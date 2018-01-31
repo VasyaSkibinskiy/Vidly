@@ -3,20 +3,51 @@ using System.Web.Mvc;
 using VidlyMy.Models;
 using VidlyMy.ViewModels;
 using System.Data.Entity;
+using System;
+using System.Linq;
 
-namespace Vidly.Controllers
+namespace VidlyMy.Controllers
 {
     public class MoviesController : Controller
     {
 
+
         private CustomerContext _context;
+
+        public MoviesController()
+        {
+            _context = new CustomerContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
+
+
+
 
         public ViewResult Index()
         {
-            var movies = GetMovies();
+            var Movies = _context.Movies.Include(m => m.Genre).ToListAsync();
 
-            return View(movies);
+            
+            return View(Movies);
         }
+
+        public ViewResult New()
+        {
+            var genres = _context.Movies.Include(m => m.Genre).ToListAsync();
+            var viewModel = new MovieFormViewModel
+            {
+               // не підключає жанр
+            };
+
+            return View("MovieForm", viewModel);
+
+        }
+
 
         private IEnumerable<Movie> GetMovies()
         {
@@ -44,6 +75,27 @@ namespace Vidly.Controllers
             };
 
             return View(viewModel);
+        }
+        [HttpPost]
+        public ActionResult Save(Movie movie)
+        {
+            if (movie.Id == 0)
+            {
+                movie.DateAdded = DateTime.Now;
+                _context.Movies.Add(movie);
+            }
+            else
+            {
+                var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
+                movieInDb.Name = movie.Name;
+                movieInDb.GenreId = movie.GenreId;
+                movieInDb.NumberInStock = movie.NumberInStock;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Movies");
         }
     }
 }
