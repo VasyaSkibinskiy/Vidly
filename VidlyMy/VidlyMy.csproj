@@ -168,6 +168,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Dto\CustomerDto.cs" />
+    <Compile Include="Dto\GenreDto.cs" />
     <Compile Include="Dto\MembershipTypeDto.cs" />
     <Compile Include="Dto\MovieDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -208,6 +209,14 @@
     <Compile Include="Migrations\201801310853357_ModelChange.cs" />
     <Compile Include="Migrations\201801310853357_ModelChange.Designer.cs">
       <DependentUpon>201801310853357_ModelChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802011250372_AddGenresToTable.cs" />
+    <Compile Include="Migrations\201802011250372_AddGenresToTable.Designer.cs">
+      <DependentUpon>201802011250372_AddGenresToTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802011253254_AddMoviesToTable.cs" />
+    <Compile Include="Migrations\201802011253254_AddMoviesToTable.Designer.cs">
+      <DependentUpon>201802011253254_AddMoviesToTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -487,6 +496,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801310853357_ModelChange.resx">
       <DependentUpon>201801310853357_ModelChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802011250372_AddGenresToTable.resx">
+      <DependentUpon>201802011250372_AddGenresToTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802011253254_AddMoviesToTable.resx">
+      <DependentUpon>201802011253254_AddMoviesToTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
